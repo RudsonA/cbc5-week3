@@ -4,7 +4,28 @@ let missed = "You missed the bird";
 
 let hit = "You hit the bird";
 
+let oneToTen = "Pick a number one to ten"
+
+let onlyNumbers = "Only numbers please!"
+
 let picknumber = prompt ("Pick a number between 0 and 10")
+
+let even = (picknumber % 2 !==0)
+
+let odd = (picknumber % 2 == 0)
+
+
+// for (; picknumber % 2 !== 0; ) {
+//     alert (hit);
+//     document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+//     if (!even) break;
+// } 
+
+// for (; picknumber % 2 == 0; ) {
+//     alert (missed); 
+//     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
+//     if (!odd) break
+// }
 
 if (picknumber == "0") {
     alert(hit);
@@ -21,21 +42,35 @@ if (picknumber == "0") {
 } else if (picknumber=="4") {
     alert(hit);
     document.getElementById("game").style.backgroundImage="url('img/home.gif')";
-// } else if (picknumber < 8) {
-//     alert(missed);
-//     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
-// } else if (picknumber < 11) {
-//     alert(hit); 
-//     document.getElementById("game").style.backgroundImage="url('img/home.gif')";
-// } else if (picknumber > 10) {
-//     alert(missed);
-//     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
-// } else (alert ("Enter a number, please")) 
-//     document.getElementById("game").style.backgroundImage="url('img/dead.png')";
-
 } else if (picknumber == "5") {
     alert(missed); 
     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
 } else if (picknumber == "6") {
-    alert(hit)
+    alert(hit);
+    document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+} else if (picknumber == "7") {
+    alert (missed);
+    document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
+} else if (picknumber=="8") {
+    alert(hit);
+    document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+} else if (picknumber=="9") {
+    alert(missed);
+    document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
+} else if (picknumber=="10") {
+    alert(hit);
+    document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+} else if (picknumber > 10) {
+    alert(oneToTen);
+    document.getElementById("game").style.backgroundImage="url('img/oneToTen.png')";
+} else { 
+    alert (onlyNumbers) 
+    document.getElementById("game").style.backgroundImage="url('img/dead.png')";
 }
+
+function display() {
+    document.getElementById("game").style.backgroundRepeat="no-repeat";
+}
+
+display()
+
