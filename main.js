@@ -20,13 +20,22 @@ if (picknumber == "0") {
     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
 } else if (picknumber=="4") {
     alert(hit);
+    document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+// } else if (picknumber < 8) {
+//     alert(missed);
+//     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
+// } else if (picknumber < 11) {
+//     alert(hit); 
+//     document.getElementById("game").style.backgroundImage="url('img/home.gif')";
+// } else if (picknumber > 10) {
+//     alert(missed);
+//     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
+// } else (alert ("Enter a number, please")) 
+//     document.getElementById("game").style.backgroundImage="url('img/dead.png')";
+
+} else if (picknumber == "5") {
+    alert(missed); 
     document.getElementById("game").style.backgroundImage="url('img/flyaway.gif')";
-} else if (picknumber < 8) {
-    alert(missed);
-} else if (picknumber <= 10) {
-    alert(hit); 
-} else if (picknumber > 10) {
-    alert(missed);
-} else (alert ("Enter a number, please"))
-
-
+} else if (picknumber == "6") {
+    alert(hit)
+}
