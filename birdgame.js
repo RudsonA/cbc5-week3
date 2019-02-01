@@ -42,7 +42,6 @@ let newPath = grid;
 // }
 
 
-function path() {
     for (let i=0; i < 9; i++) {
         if (i == birdsPath) {
             grid += "X";
@@ -52,7 +51,7 @@ function path() {
             grid += "_";
         }
     }
-}
+
 
 
 
@@ -77,7 +76,7 @@ function path() {
 function playGame() {
 
     for (let i = 3; i > 0; i--) {
-        let number = prompt("Pick a number from zero to three")
+        let number = prompt("Pick a number from zero to eight")
         let birdsPath = Math.floor(Math.random() * 9)
         let birdwas = " Bird was at " + birdsPath
         let attempts = i
