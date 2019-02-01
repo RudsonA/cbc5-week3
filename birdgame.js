@@ -9,7 +9,7 @@ let missed = "You missed the bird!";
 
 let hit = "You hit the bird";
 
-let zeroToNine = "Pick a number from zero to nine"
+let zeroTo3 = "Pick a number from zero to three."
 
 let onlyNumbers = "Only numbers please!"
 
@@ -55,8 +55,8 @@ function path(birdsPath) {
 function playGame() {
 
     for (let i = 3; i > 0; i--) {
-        let number = prompt("Pick a number from zero to nine")
-        let birdsPath = Math.floor(Math.random() * 3)
+        let number = prompt("Pick a number from zero to three")
+        let birdsPath = Math.floor(Math.random() * 4)
         let birdwas = " Bird was at " + birdsPath
         let attempts = i
         let remainding = "You have " + (attempts - 1) + " attempt(s) remainding!"
