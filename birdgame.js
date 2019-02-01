@@ -1,7 +1,7 @@
 "use strict"
 
-String.prototype.replaceAt=function(index, replacement) {
-    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+String.prototype.replaceAt = function (index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
 
 
@@ -13,7 +13,10 @@ let zeroTo3 = "Pick a number from zero to three."
 
 let onlyNumbers = "Only numbers please!"
 
-let grid = ("_|_\n_|_\n")
+// let grid = ("_|_\n_|_\n")
+
+let grid = ""
+
 console.log(grid)
 
 let birdsPath = Math.floor(Math.random() * 3)
@@ -38,32 +41,50 @@ let newPath = grid;
 //     }
 // }
 
-function path(birdsPath) {
-    if (birdsPath == 0) {
-        console.log(grid.replaceAt(0, "X"));
-    } else if (birdsPath==1) {
-        console.log(grid.replaceAt(2, "X"));
-    } else if (birdsPath==2) {
-        console.log(grid.replaceAt(4, "X"));
-    } else if (birdsPath == 3) {
-        console.log(grid.replaceAt(6, "X"));
-    } else {
-        console.log("Unnacceptable input")
+
+function path() {
+    for (let i=0; i < 9; i++) {
+        if (i == birdsPath) {
+            grid += "X";
+        } else if (i == 6 || i == 12) {
+            grid += "|"; 
+        } else {
+            grid += "_";
+        }
     }
 }
+
+
+
+// function path(birdsPath) {
+//     if (birdsPath == 0) {
+//         console.log(grid.replaceAt(0, "X"));
+//     } else if (birdsPath == 1) {
+//         console.log(grid.replaceAt(2, "X"));
+//     } else if (birdsPath == 2) {
+//         console.log(grid.replaceAt(4, "X"));
+//     } else if (birdsPath == 3) {
+//         console.log(grid.replaceAt(6, "X"));
+//     } else {
+//         console.log("Unnacceptable input")
+//     }
+// }
+
+
+
+
 
 function playGame() {
 
     for (let i = 3; i > 0; i--) {
         let number = prompt("Pick a number from zero to three")
-        let birdsPath = Math.floor(Math.random() * 4)
+        let birdsPath = Math.floor(Math.random() * 9)
         let birdwas = " Bird was at " + birdsPath
         let attempts = i
         let remainding = "You have " + (attempts - 1) + " attempt(s) remainding!"
 
         if (number == birdsPath) {
             alert(hit);
-            document.getElementById("game").style.backgroundImage = "url('img/up.gif'";
             console.log(path(birdsPath))
             console.log(birdsPath)
             break
@@ -71,55 +92,53 @@ function playGame() {
             alert(missed + birdwas + "!");
             alert(remainding);
             console.log(birdsPath)
-            // console.log(grid.charAt(birdsPath))
             console.log(path(birdsPath))
-            document.getElementById("game").style.backgroundImage = "url('img/down.gif'";
         }
     }
 }
 
-    
 
-    // function path(birdsPath) {
-    //     if (birdsPath == 0) {
-    //         console.log(newPath.charsAt(0) = "X")
-    //     } else if (birdsPath == 1) {
-    //         console.log(newPath.charsAt(1) = "X")
-    //     } else if (birdsPath == 2) {
-    //         console.log(newPath.charsAt(2) = "X")
-    //     } else if (birdsPath == 3) {
-    //         console.log(newPath.charsAt(3) = "X")
-    //     } else {
-    //         console.log("Unnacceptable input")
-    //     }
-    // }
-    // // console.log(newPath);
 
-    // function playGame() {
+// function path(birdsPath) {
+//     if (birdsPath == 0) {
+//         console.log(newPath.charsAt(0) = "X")
+//     } else if (birdsPath == 1) {
+//         console.log(newPath.charsAt(1) = "X")
+//     } else if (birdsPath == 2) {
+//         console.log(newPath.charsAt(2) = "X")
+//     } else if (birdsPath == 3) {
+//         console.log(newPath.charsAt(3) = "X")
+//     } else {
+//         console.log("Unnacceptable input")
+//     }
+// }
+// // console.log(newPath);
 
-    //     for (let i = 3; i > 0; i--) {
-    //         let number = prompt("Pick a number from zero to nine")
-    //         let birdsPath = Math.floor(Math.random() * 3)
-    //         let birdwas = " Bird was at " + birdsPath
-    //         let attempts = i
-    //         let remainding = "You have " + (attempts - 1) + " attempt(s) remainding!"
+// function playGame() {
 
-    //         if (number == birdsPath) {
-    //             alert(hit);
-    //             document.getElementById("game").style.backgroundImage = "url('img/up.gif'";
-    //             console.log(path(birdsPath))
-    //             console.log(birdsPath)
-    //             break
-    //         } else {
-    //             alert(missed + birdwas + "!");
-    //             alert(remainding);
-    //             console.log(birdsPath)
-    //             // console.log(grid.charAt(birdsPath))
-    //             console.log(path(birdsPath))
-    //             document.getElementById("game").style.backgroundImage = "url('img/down.gif'";
-    //         }
-    //     }
-    // }
+//     for (let i = 3; i > 0; i--) {
+//         let number = prompt("Pick a number from zero to nine")
+//         let birdsPath = Math.floor(Math.random() * 3)
+//         let birdwas = " Bird was at " + birdsPath
+//         let attempts = i
+//         let remainding = "You have " + (attempts - 1) + " attempt(s) remainding!"
+
+//         if (number == birdsPath) {
+//             alert(hit);
+//             document.getElementById("game").style.backgroundImage = "url('img/up.gif'";
+//             console.log(path(birdsPath))
+//             console.log(birdsPath)
+//             break
+//         } else {
+//             alert(missed + birdwas + "!");
+//             alert(remainding);
+//             console.log(birdsPath)
+//             // console.log(grid.charAt(birdsPath))
+//             console.log(path(birdsPath))
+//             document.getElementById("game").style.backgroundImage = "url('img/down.gif'";
+//         }
+//     }
+// }
 
 playGame()
 
